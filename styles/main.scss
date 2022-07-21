@@ -1,16 +1,109 @@
 /* ----- GLOBAL CONFIGURATION ----- */
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+@mixin screen-max($min) {
+    @media screen and (max-width: $min) {
+        @content
+    }
+}
 
 $primary-color: #9356DC;
-$secondaty-color: #FF79DA;
+$secondary-color: #FF79DA;
 $tertiary-color: #99E2D0;
 $background-color: white;
 
 $title-font: 'Shrikhand', sans-serif;
 $text-font: 'Roboto', sans-serif;
 
-h1 {
-    font-family: $title-font;
-    font-weight: bold;
+$mobile-width: 768px;
+$tablet-width: 1024px;
+
+
+body {
+    margin: 0;
+    font-family: $text-font;
+    background-color: $background-color;
+
+    p {
+        font-weight: lighter;
+        font-size: 20px;
+        color: rgba(#000000, .6);
+    }
+
+    header {
+        margin: 0;
+
+        .logo {
+            text-align: center;
+            padding-top: 20px;
+            padding-bottom: 10px;
+            width: 100%;
+            box-shadow: 5px 0 5px 5px rgba(#000000, .1);
+
+            img {
+                height: 35px;
+            }
+        }
+
+        h1 {
+            font-weight: bolder;
+            font-size: 35px;
+            font-weight: 400;
+        }
+
+    }
+
+    main {
+
+        #home {
+            display: flex;
+            align-items: center;
+            background-color: rgba(#000000, .03);
+            flex-direction: column;
+            text-align: center;
+
+            .presentation,
+            .explore {
+                margin: 15px;
+            }
+
+            .city {
+                width: 100%;
+                background-color: rgba(#000000, .03);
+                color: rgba(#000000, .7);
+                font-size: 18px;
+                font-weight: bold;
+                vertical-align: middle;
+                padding: 15px 0;
+
+                i {
+                    padding: 0 10px;
+                }
+            }
+
+            .presentation {
+                p {
+                    margin: 0;
+                }
+            }
+
+            .explore {
+                background: linear-gradient(0deg, $primary-color , $secondary-color);
+                box-shadow: 0px 2px 2px 3px rgba(#000000, .08);
+                border-radius: 30px;
+                text-decoration: none;
+                color: white;
+                margin-bottom: 50px;
+                padding: 15px 25px;
+
+                &:hover {
+                    background: linear-gradient(0deg, lighten($primary-color, 3%), lighten($secondary-color, 3%));
+                    box-shadow: 0px 0px 3px 3px rgba(#000000, .15);
+
+                }
+
+            }
+        }
+    }
 }

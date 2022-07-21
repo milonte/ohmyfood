@@ -1,9 +1,72 @@
 /* ----- GLOBAL CONFIGURATION ----- */
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-h1 {
-  font-family: "Shrikhand", sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: white;
+}
+body p {
+  font-weight: lighter;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.6);
+}
+body header {
+  margin: 0;
+}
+body header .logo {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  width: 100%;
+  box-shadow: 5px 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+body header .logo img {
+  height: 35px;
+}
+body header h1 {
+  font-weight: bolder;
+  font-size: 35px;
+  font-weight: 400;
+}
+body main #home {
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.03);
+  flex-direction: column;
+  text-align: center;
+}
+body main #home .presentation,
+body main #home .explore {
+  margin: 15px;
+}
+body main #home .city {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.03);
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 18px;
   font-weight: bold;
+  vertical-align: middle;
+  padding: 15px 0;
+}
+body main #home .city i {
+  padding: 0 10px;
+}
+body main #home .presentation p {
+  margin: 0;
+}
+body main #home .explore {
+  background: linear-gradient(0deg, #9356DC, #FF79DA);
+  box-shadow: 0px 2px 2px 3px rgba(0, 0, 0, 0.08);
+  border-radius: 30px;
+  text-decoration: none;
+  color: white;
+  margin-bottom: 50px;
+  padding: 15px 25px;
+}
+body main #home .explore:hover {
+  background: linear-gradient(0deg, #9b63df, #ff88de);
+  box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.15);
 }
 
 /*# sourceMappingURL=main.css.map */
