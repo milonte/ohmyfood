@@ -1,0 +1,19 @@
+/* ----- GLOBAL CONFIGURATION ----- */
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+    --primary-color: #9356DC;
+    --secondaty-color: #FF79DA;
+    --tertiary-color: #99E2D0;
+    --background-color: white;
+
+    --title-font: 'Shrikhand', sans-serif;
+    --text-font: 'Roboto',
+        sans-serif;
+}
+
+h1 {
+    font-family: var(--title-font);
+    font-weight: bold;
+}
