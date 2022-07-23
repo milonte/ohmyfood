@@ -126,7 +126,6 @@ body {
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
-
         }
 
         #steps {
@@ -196,7 +195,6 @@ body {
         #restaurants {
             background-color: $secondary-background-color;
 
-
             @include screen-min($tablet-min-width) {
                 padding: 20px;
                 flex-direction: row;
@@ -213,11 +211,31 @@ body {
                     flex: 50%;
                 }
 
+
                 .card {
                     min-width: 300px;
                     background-color: $background-color;
                     overflow: hidden;
-                    transition: box-shadow .1s ease-out .05s, transform .1s ease-out .05s;
+                    transition: box-shadow .1s ease-out .05s,
+                        transform .1s ease-out .05s;
+                    /* needed for position absolute of "new" pill */
+                    position: relative;
+
+                    .new::after {
+                        /* position absolute works because 
+                        parent is in position relative */
+                        position: absolute;
+                        content: "Nouveau";
+                        padding: 8px 25px;
+                        background-color: $tertiary-color;
+                        color: green;
+                        font-size: 18px;
+                        top: 20px;
+                        right: 20px;
+                        overflow: hidden;
+                        width: 70px;
+                        text-align: center;
+                    }
 
                     &:hover {
                         box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, .2);
@@ -345,6 +363,7 @@ body {
                         }
                     }
                 }
+
 
 
             }

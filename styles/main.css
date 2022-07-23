@@ -175,6 +175,23 @@ body main #restaurants .card-container .card {
   background-color: white;
   overflow: hidden;
   transition: box-shadow 0.1s ease-out 0.05s, transform 0.1s ease-out 0.05s;
+  /* needed for position absolute of "new" pill */
+  position: relative;
+}
+body main #restaurants .card-container .card .new::after {
+  /* position absolute works because 
+  parent is in position relative */
+  position: absolute;
+  content: "Nouveau";
+  padding: 8px 25px;
+  background-color: #99E2D0;
+  color: green;
+  font-size: 18px;
+  top: 20px;
+  right: 20px;
+  overflow: hidden;
+  width: 70px;
+  text-align: center;
 }
 body main #restaurants .card-container .card:hover {
   box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.2);
