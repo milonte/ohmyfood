@@ -121,15 +121,15 @@ body {
 
         #steps,
         #restaurants {
-            padding-top: 50px;
-            margin-bottom: 50px;
+            padding-top: 60px;
+            padding-bottom: 60px;
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
         }
 
         #steps {
-            padding: 0 20px;
+            /* padding: 0 20px; */
             display: flex;
             flex-direction: column;
 
@@ -196,7 +196,8 @@ body {
             background-color: $secondary-background-color;
 
             @include screen-min($tablet-min-width) {
-                padding: 20px;
+                padding-left: 20px;
+                padding-right: 20px;
                 flex-direction: row;
                 flex-wrap: wrap;
                 justify-content: center;
@@ -371,5 +372,34 @@ body {
 
 
         }
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(#000000, .85);
+        padding: 30px;
+        padding-bottom: 35px;
+        color: white;
+
+        .logo {
+            font-size: 25px;
+            font-family: $title-font;
+            padding-bottom: 13px;
+        }
+
+        a {
+            color: white;
+            margin-top: 13px;
+            text-decoration: none;
+            font-size: 20px;
+
+            i {
+                width: 20px;
+                margin-right: 10px;
+                font-size: 17px;
+            }
+        }
+
     }
 }
