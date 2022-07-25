@@ -24,7 +24,7 @@ $desktop-min-width: 1024px;
 body {
 
     /* spinner loading*/
-    &::before {
+    &::after {
         content: "";
         background-color: white;
         background-image: url("../images/ohmyfood@2x.svg");
