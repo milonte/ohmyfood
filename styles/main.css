@@ -1,9 +1,91 @@
 /* ----- GLOBAL CONFIGURATION ----- */
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-h1 {
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: white;
+}
+body p {
+  font-weight: lighter;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.6);
+}
+body header {
+  margin: 0;
+}
+body header .logo {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  width: 100%;
+  box-shadow: 5px 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+body header .logo img {
+  height: 35px;
+}
+body header h1 {
+  font-weight: bolder;
+  font-size: 35px;
+  font-weight: 400;
+}
+body main .title {
+  flex: 100%;
+  margin: 25px;
+}
+body main .card {
+  background-color: rgba(0, 0, 0, 0.03);
+  box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  margin: 15px;
+}
+body main footer {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 30px;
+  padding-bottom: 35px;
+  color: white;
+}
+body main footer .logo {
+  font-size: 25px;
   font-family: "Shrikhand", sans-serif;
-  font-weight: bold;
+  padding-bottom: 13px;
+}
+body main footer a {
+  color: white;
+  margin-top: 13px;
+  text-decoration: none;
+  font-size: 20px;
+}
+body main footer a i {
+  width: 20px;
+  margin-right: 10px;
+  font-size: 17px;
+}
+body footer {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 30px;
+  padding-bottom: 35px;
+  color: white;
+}
+body footer .logo {
+  font-size: 25px;
+  font-family: "Shrikhand", sans-serif;
+  padding-bottom: 13px;
+}
+body footer a {
+  color: white;
+  margin-top: 13px;
+  text-decoration: none;
+  font-size: 20px;
+}
+body footer a i {
+  width: 20px;
+  margin-right: 10px;
+  font-size: 17px;
 }
 
 /*# sourceMappingURL=main.css.map */

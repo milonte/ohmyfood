@@ -1,0 +1,9 @@
+body main #cover {
+  object-fit: cover;
+}
+body main #cover img {
+  height: 300px;
+  width: 100%;
+}
+
+/*# sourceMappingURL=menu.css.map */
