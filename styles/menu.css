@@ -27,7 +27,6 @@ body main .row {
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
-  max-width: 800px;
   padding-right: 20px;
 }
 body main .row h1 {
@@ -43,13 +42,50 @@ body main #menu {
   margin-top: -30px;
   border-radius: 30px 30px 0 0;
 }
-body main #menu h2 {
+@media screen and (min-width: 768px) {
+  body main #menu {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+}
+body main #menu .main-container {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  body main #menu .main-container {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+body main #menu .main-container .card-container {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin-bottom: 50px;
+  flex: 100%;
+}
+@media screen and (min-width: 768px) {
+  body main #menu .main-container .card-container {
+    flex: 40%;
+    width: 40%;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (min-width: 1280px) {
+  body main #menu .main-container .card-container {
+    flex: 30%;
+    width: 30%;
+    flex-wrap: wrap;
+  }
+}
+body main #menu .main-container .card-container h2 {
   font-weight: lighter;
   text-transform: uppercase;
   position: relative;
   color: rgba(0, 0, 0, 0.7);
 }
-body main #menu h2::after {
+body main #menu .main-container .card-container h2::after {
   position: absolute;
   content: " ";
   width: 60px;
@@ -58,12 +94,9 @@ body main #menu h2::after {
   bottom: -7px;
   left: 0;
 }
-body main #menu .card-container {
-  display: flex;
-}
-body main #menu .card-container .card {
+body main #menu .main-container .card-container .card {
+  flex: 100%;
   min-width: 0;
-  width: 100%;
   overflow: hidden;
   height: 100px;
   display: flex;
@@ -71,7 +104,12 @@ body main #menu .card-container .card {
   flex-wrap: nowrap;
   align-items: center;
 }
-body main #menu .card-container .card:hover .infos {
+@media screen and (min-width: 768px) {
+  body main #menu .main-container .card-container .card {
+    min-width: 300px;
+  }
+}
+body main #menu .main-container .card-container .card:hover .infos {
   /*
   100% : base card width
   10% : hack to prevent overflow
@@ -79,10 +117,10 @@ body main #menu .card-container .card:hover .infos {
   */
   width: calc(90% - 100px);
 }
-body main #menu .card-container .card:hover .command {
+body main #menu .main-container .card-container .card:hover .command {
   margin-right: 0;
 }
-body main #menu .card-container .card .infos {
+body main #menu .main-container .card-container .card .infos {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -92,8 +130,8 @@ body main #menu .card-container .card .infos {
   padding: 10px 25px;
   transition: width 0.3s ease-in-out;
 }
-body main #menu .card-container .card .infos h3,
-body main #menu .card-container .card .infos .details .ingredients {
+body main #menu .main-container .card-container .card .infos h3,
+body main #menu .main-container .card-container .card .infos .details .ingredients {
   margin: 5px 0;
   word-wrap: break-word;
   overflow: hidden;
@@ -101,27 +139,27 @@ body main #menu .card-container .card .infos .details .ingredients {
   text-overflow: ellipsis;
   max-width: 80%;
 }
-body main #menu .card-container .card .infos h3 {
+body main #menu .main-container .card-container .card .infos h3 {
   color: black;
   font-size: 25px;
   font-weight: bold;
 }
-body main #menu .card-container .card .infos .details {
+body main #menu .main-container .card-container .card .infos .details {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
 }
-body main #menu .card-container .card .infos .details .ingredients,
-body main #menu .card-container .card .infos .details .price {
+body main #menu .main-container .card-container .card .infos .details .ingredients,
+body main #menu .main-container .card-container .card .infos .details .price {
   font-size: 22px;
   color: black;
 }
-body main #menu .card-container .card .infos .details .price {
+body main #menu .main-container .card-container .card .infos .details .price {
   font-weight: bold;
 }
-body main #menu .card-container .card .command {
+body main #menu .main-container .card-container .card .command {
   height: 100%;
   width: 100px;
   min-width: 100px;
@@ -133,10 +171,10 @@ body main #menu .card-container .card .command {
   margin-right: -100px;
   transition: margin-right 0.3s ease-in-out, font-size 0.2s ease-in-out;
 }
-body main #menu .card-container .card .command:hover {
+body main #menu .main-container .card-container .card .command:hover {
   font-size: 40px;
 }
-body main #menu .card-container .card .command a {
+body main #menu .main-container .card-container .card .command a {
   color: white;
 }
 

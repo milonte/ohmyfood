@@ -227,7 +227,7 @@ body main #restaurants .card-container .card a .picture img {
     height: 220px;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1280px) {
   body main #restaurants .card-container .card a .picture,
 body main #restaurants .card-container .card a .picture img {
     height: 250px;

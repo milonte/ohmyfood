@@ -12,4 +12,10 @@ $title-font: 'Shrikhand', sans-serif;
 $text-font: 'Roboto', sans-serif;
 
 $tablet-min-width: 768px;
-$desktop-min-width: 1024px;
+$desktop-min-width: 1280px;
+
+@mixin screen-min($min) {
+    @media screen and (min-width: $min) {
+        @content
+    }
+}

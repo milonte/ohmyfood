@@ -1,11 +1,5 @@
 @use 'config';
 
-@mixin screen-min($min) {
-    @media screen and (min-width: $min) {
-        @content
-    }
-}
-
 body {
 
     header {}
@@ -127,7 +121,7 @@ body {
             display: flex;
             flex-direction: column;
 
-            @include screen-min(config.$tablet-min-width) {
+            @include config.screen-min(config.$tablet-min-width) {
                 flex-direction: row;
                 justify-content: center;
             }
@@ -188,7 +182,7 @@ body {
         #restaurants {
             background-color: config.$secondary-background-color;
 
-            @include screen-min(config.$tablet-min-width) {
+            @include config.screen-min(config.$tablet-min-width) {
                 padding-left: 20px;
                 padding-right: 20px;
                 flex-direction: row;
@@ -200,7 +194,7 @@ body {
                 display: flex;
                 flex-direction: column;
 
-                @include screen-min(config.$tablet-min-width) {
+                @include config.screen-min(config.$tablet-min-width) {
                     flex-direction: row;
                     flex: 50%;
                 }
@@ -228,7 +222,7 @@ body {
                     }
 
 
-                    @include screen-min(config.$tablet-min-width) {
+                    @include config.screen-min(config.$tablet-min-width) {
                         width: 100%;
                     }
 
@@ -253,11 +247,11 @@ body {
                             object-fit: cover;
                             overflow: hidden;
 
-                            @include screen-min(config.$tablet-min-width) {
+                            @include config.screen-min(config.$tablet-min-width) {
                                 height: 220px;
                             }
 
-                            @include screen-min(config.$desktop-min-width) {
+                            @include config.screen-min(config.$desktop-min-width) {
                                 height: 250px;
                             }
                         }
