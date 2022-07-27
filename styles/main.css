@@ -34,7 +34,7 @@ body main .title {
   margin: 25px;
 }
 body main .card {
-  background-color: rgba(0, 0, 0, 0.03);
+  background-color: #f3f3f3;
   box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   margin: 15px;

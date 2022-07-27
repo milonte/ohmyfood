@@ -49,7 +49,7 @@ body::before {
 body main #home {
   display: flex;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.03);
+  background-color: #f3f3f3;
   flex-direction: column;
   text-align: center;
 }
@@ -59,7 +59,7 @@ body main #home .explore {
 }
 body main #home .city {
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.03);
+  background-color: #f3f3f3;
   color: rgba(0, 0, 0, 0.7);
   font-size: 18px;
   font-weight: bold;
@@ -157,7 +157,7 @@ body main #steps .card::before {
   font-size: 13px;
 }
 body main #restaurants {
-  background-color: rgba(0, 0, 0, 0.03);
+  background-color: #f3f3f3;
 }
 @media screen and (min-width: 768px) {
   body main #restaurants {

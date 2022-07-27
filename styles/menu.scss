@@ -1,13 +1,43 @@
+@use 'config';
+
 body {
+
+    header {
+        nav {
+            position: relative;
+
+            .back {
+                position: absolute;
+                top: 20px;
+                left: 30px;
+                font-size: 30px;
+                color: black;
+            }
+        }
+    }
+
     main {
         #cover {
             object-fit: cover;
+            position: relative;
+            z-index: 1;
 
             img {
                 height: 300px;
                 width: 100%;
+                object-fit: cover;
 
             }
+        }
+
+        #menu {
+            position: relative;
+            z-index: 8;
+            background-color: config.$secondary-background-color;
+            padding-top: 15px;
+            padding-bottom: 50px;
+            margin-top: -30px;
+            border-radius: 30px 30px 0 0;
         }
     }
 }
