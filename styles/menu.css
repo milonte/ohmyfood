@@ -78,9 +78,11 @@ body main #menu .main-container .card-container:nth-of-type(3) {
 }
 @keyframes loader {
   0% {
+    margin-top: 10px;
     opacity: 0;
   }
   100% {
+    margin-top: 0;
     opacity: 1;
   }
 }
@@ -139,6 +141,9 @@ body main #menu .main-container .card-container .card:hover .infos {
 body main #menu .main-container .card-container .card:hover .command {
   margin-right: 0;
 }
+body main #menu .main-container .card-container .card:hover .command a {
+  transform: rotate(360deg);
+}
 body main #menu .main-container .card-container .card .infos {
   display: flex;
   flex-direction: column;
@@ -195,6 +200,7 @@ body main #menu .main-container .card-container .card .command:hover {
 }
 body main #menu .main-container .card-container .card .command a {
   color: white;
+  transition: transform 0.3s ease-in-out;
 }
 body main #menu .main-container .purple-container {
   margin-bottom: 50px;
