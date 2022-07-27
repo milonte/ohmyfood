@@ -65,7 +65,7 @@ body {
             text-align: center;
 
             .presentation,
-            .explore {
+            .purple {
                 margin: 15px;
             }
 
@@ -89,22 +89,6 @@ body {
                 }
             }
 
-            .explore {
-                background: linear-gradient(0deg, config.$primary-color , config.$secondary-color);
-                box-shadow: 0px 2px 2px 3px rgba(#000000, .08);
-                border-radius: 30px;
-                text-decoration: none;
-                color: white;
-                margin-bottom: 50px;
-                padding: 15px 25px;
-
-                &:hover {
-                    background: linear-gradient(0deg, lighten(config.$primary-color, 3%), lighten(config.$secondary-color, 3%));
-                    box-shadow: 0px 0px 3px 3px rgba(#000000, .15);
-
-                }
-
-            }
         }
 
         #steps,

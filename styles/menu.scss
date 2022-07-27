@@ -205,8 +205,27 @@ body {
                     }
                 }
 
+                .purple-container {
+                    margin-bottom: 50px;
+                    flex: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 25px;
+
+                    @include config.screen-min(config.$tablet-min-width) {
+                        flex: 40%;
+                        width: 40%;
+                    }
+
+                    @include config.screen-min(config.$desktop-min-width) {
+                        flex: 100%;
+                        width: 100%;
+                    }
+                }
             }
 
         }
+
     }
 }

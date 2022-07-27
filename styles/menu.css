@@ -177,5 +177,25 @@ body main #menu .main-container .card-container .card .command:hover {
 body main #menu .main-container .card-container .card .command a {
   color: white;
 }
+body main #menu .main-container .purple-container {
+  margin-bottom: 50px;
+  flex: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+}
+@media screen and (min-width: 768px) {
+  body main #menu .main-container .purple-container {
+    flex: 40%;
+    width: 40%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  body main #menu .main-container .purple-container {
+    flex: 100%;
+    width: 100%;
+  }
+}
 
 /*# sourceMappingURL=menu.css.map */
