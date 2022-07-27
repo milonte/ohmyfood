@@ -17,6 +17,7 @@ body {
     }
 
     main {
+
         #cover {
             object-fit: cover;
             position: relative;
@@ -30,6 +31,22 @@ body {
             }
         }
 
+        .row {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 800px;
+            padding-right: 20px;
+
+            h1 {
+                font-family: config.$title-font;
+                font-size: 35px;
+            }
+
+        }
+
         #menu {
             position: relative;
             z-index: 8;
@@ -38,6 +55,23 @@ body {
             padding-bottom: 50px;
             margin-top: -30px;
             border-radius: 30px 30px 0 0;
+
+            h2 {
+                font-weight: lighter;
+                text-transform: uppercase;
+                position: relative;
+                color: rgba(0, 0, 0, .7);
+
+                &::after {
+                    position: absolute;
+                    content: " ";
+                    width: 60px;
+                    height: 4px;
+                    background-color: config.$tertiary-color;
+                    bottom: -7px;
+                    left: 0;
+                }
+            }
         }
     }
 }
