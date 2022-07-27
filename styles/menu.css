@@ -141,7 +141,7 @@ body main #menu .main-container .card-container .card .infos .details .ingredien
 }
 body main #menu .main-container .card-container .card .infos h3 {
   color: black;
-  font-size: 25px;
+  font-size: 22px;
   font-weight: bold;
 }
 body main #menu .main-container .card-container .card .infos .details {
@@ -153,7 +153,7 @@ body main #menu .main-container .card-container .card .infos .details {
 }
 body main #menu .main-container .card-container .card .infos .details .ingredients,
 body main #menu .main-container .card-container .card .infos .details .price {
-  font-size: 22px;
+  font-size: 20px;
   color: black;
 }
 body main #menu .main-container .card-container .card .infos .details .price {
