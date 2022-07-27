@@ -71,14 +71,26 @@ body main #menu .card-container .card {
   flex-wrap: nowrap;
   align-items: center;
 }
+body main #menu .card-container .card:hover .infos {
+  /*
+  100% : base card width
+  10% : hack to prevent overflow
+  100px : base hover command button width
+  */
+  width: calc(90% - 100px);
+}
+body main #menu .card-container .card:hover .command {
+  margin-right: 0;
+}
 body main #menu .card-container .card .infos {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  width: 100%;
+  width: 90%;
   max-width: 90%;
   margin: auto;
   padding: 10px 25px;
+  transition: width 0.3s ease-in-out;
 }
 body main #menu .card-container .card .infos h3,
 body main #menu .card-container .card .infos .details .ingredients {
@@ -108,6 +120,24 @@ body main #menu .card-container .card .infos .details .price {
 }
 body main #menu .card-container .card .infos .details .price {
   font-weight: bold;
+}
+body main #menu .card-container .card .command {
+  height: 100%;
+  width: 100px;
+  min-width: 100px;
+  background-color: #99E2D0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  margin-right: -100px;
+  transition: margin-right 0.3s ease-in-out, font-size 0.2s ease-in-out;
+}
+body main #menu .card-container .card .command:hover {
+  font-size: 40px;
+}
+body main #menu .card-container .card .command a {
+  color: white;
 }
 
 /*# sourceMappingURL=menu.css.map */

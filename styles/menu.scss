@@ -86,14 +86,32 @@ body {
                     flex-wrap: nowrap;
                     align-items: center;
 
+                    &:hover {
+                        .infos {
+                            /*
+                            100% : base card width
+                            10% : hack to prevent overflow
+                            100px : base hover command button width
+                            */
+                            width: calc(100% - 10% - 100px);
+                        }
+
+                        .command {
+                            margin-right: 0;
+                        }
+                    }
+
                     .infos {
                         display: flex;
                         flex-direction: column;
                         flex-wrap: nowrap;
-                        width: 100%;
+                        //  90% : prevent overflow
+                        width: 90%;
                         max-width: 90%;
                         margin: auto;
                         padding: 10px 25px;
+                        // content width adjust when hover
+                        transition: width .3s ease-in-out;
 
                         h3,
                         .details .ingredients {
@@ -124,12 +142,33 @@ body {
                                 color: black;
                             }
 
-
                             .price {
                                 font-weight: bold;
                             }
                         }
 
+
+                    }
+
+                    .command {
+                        height: 100%;
+                        width: 100px;
+                        min-width: 100px;
+                        background-color: config.$tertiary-color;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 35px;
+                        margin-right: -100px;
+                        transition: margin-right .3s ease-in-out, font-size .2s ease-in-out;
+
+                        &:hover {
+                            font-size: 40px;
+                        }
+
+                        a {
+                            color: white;
+                        }
                     }
                 }
             }
