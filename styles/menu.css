@@ -64,6 +64,25 @@ body main #menu .main-container .card-container {
   flex-wrap: nowrap;
   margin-bottom: 50px;
   flex: 100%;
+  opacity: 0;
+  animation: loader 0.3s forwards ease-in-out;
+}
+body main #menu .main-container .card-container:nth-of-type(1) {
+  animation-delay: 0.25s;
+}
+body main #menu .main-container .card-container:nth-of-type(2) {
+  animation-delay: 0.5s;
+}
+body main #menu .main-container .card-container:nth-of-type(3) {
+  animation-delay: 0.75s;
+}
+@keyframes loader {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 @media screen and (min-width: 768px) {
   body main #menu .main-container .card-container {
