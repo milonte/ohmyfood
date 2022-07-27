@@ -98,6 +98,25 @@ body {
             box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, .1);
             border-radius: 20px;
             margin: 15px;
+            min-width: 300px;
+            background-color: config.$background-color;
+            transition: box-shadow .1s ease-out .05s,
+                transform .1s ease-out .05s;
+
+            &:hover {
+                box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, .2);
+                transform: scale(1.005);
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+
+            h3,
+            p {
+                text-decoration: none;
+            }
         }
 
         footer {

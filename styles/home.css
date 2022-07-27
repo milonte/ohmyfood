@@ -178,10 +178,7 @@ body main #restaurants .card-container {
   }
 }
 body main #restaurants .card-container .card {
-  min-width: 300px;
-  background-color: white;
   overflow: hidden;
-  transition: box-shadow 0.1s ease-out 0.05s, transform 0.1s ease-out 0.05s;
   /* needed for position absolute of "new" pill */
   position: relative;
 }
@@ -199,10 +196,6 @@ body main #restaurants .card-container .card .new::after {
   overflow: hidden;
   width: 70px;
   text-align: center;
-}
-body main #restaurants .card-container .card:hover {
-  box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.2);
-  transform: scale(1.005);
 }
 @media screen and (min-width: 768px) {
   body main #restaurants .card-container .card {

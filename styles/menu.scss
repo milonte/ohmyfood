@@ -72,6 +72,67 @@ body {
                     left: 0;
                 }
             }
+
+            .card-container {
+                display: flex;
+
+                .card {
+                    min-width: 0;
+                    width: 100%;
+                    overflow: hidden;
+                    height: 100px;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    align-items: center;
+
+                    .infos {
+                        display: flex;
+                        flex-direction: column;
+                        flex-wrap: nowrap;
+                        width: 100%;
+                        max-width: 90%;
+                        margin: auto;
+                        padding: 10px 25px;
+
+                        h3,
+                        .details .ingredients {
+                            margin: 5px 0;
+                            word-wrap: break-word;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            max-width: 80%;
+                        }
+
+                        h3 {
+                            color: black;
+                            font-size: 25px;
+                            font-weight: bold;
+                        }
+
+                        .details {
+                            display: flex;
+                            flex-direction: row;
+                            flex-wrap: nowrap;
+                            align-items: center;
+                            justify-content: space-between;
+
+                            .ingredients,
+                            .price {
+                                font-size: 22px;
+                                color: black;
+                            }
+
+
+                            .price {
+                                font-weight: bold;
+                            }
+                        }
+
+                    }
+                }
+            }
         }
     }
 }

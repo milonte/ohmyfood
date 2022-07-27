@@ -207,11 +207,7 @@ body {
 
 
                 .card {
-                    min-width: 300px;
-                    background-color: config.$background-color;
                     overflow: hidden;
-                    transition: box-shadow .1s ease-out .05s,
-                        transform .1s ease-out .05s;
                     /* needed for position absolute of "new" pill */
                     position: relative;
 
@@ -231,10 +227,6 @@ body {
                         text-align: center;
                     }
 
-                    &:hover {
-                        box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, .2);
-                        transform: scale(1.005);
-                    }
 
                     @include screen-min(config.$tablet-min-width) {
                         width: 100%;

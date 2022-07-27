@@ -58,5 +58,56 @@ body main #menu h2::after {
   bottom: -7px;
   left: 0;
 }
+body main #menu .card-container {
+  display: flex;
+}
+body main #menu .card-container .card {
+  min-width: 0;
+  width: 100%;
+  overflow: hidden;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+body main #menu .card-container .card .infos {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 100%;
+  max-width: 90%;
+  margin: auto;
+  padding: 10px 25px;
+}
+body main #menu .card-container .card .infos h3,
+body main #menu .card-container .card .infos .details .ingredients {
+  margin: 5px 0;
+  word-wrap: break-word;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 80%;
+}
+body main #menu .card-container .card .infos h3 {
+  color: black;
+  font-size: 25px;
+  font-weight: bold;
+}
+body main #menu .card-container .card .infos .details {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+body main #menu .card-container .card .infos .details .ingredients,
+body main #menu .card-container .card .infos .details .price {
+  font-size: 22px;
+  color: black;
+}
+body main #menu .card-container .card .infos .details .price {
+  font-weight: bold;
+}
 
 /*# sourceMappingURL=menu.css.map */
