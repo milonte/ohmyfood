@@ -10,7 +10,6 @@ body {
         background-repeat: no-repeat;
         background-position: center;
         background-size: 0;
-        position: absolute;
         display: flex;
         justify-items: center;
         margin: auto;
@@ -20,9 +19,10 @@ body {
         animation: loader 2.5s forwards;
         animation-delay: .5s;
 
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
+        z-index: 99;
     }
 
     @keyframes loader {
@@ -61,6 +61,7 @@ body {
             background-color: config.$secondary-background-color;
             flex-direction: column;
             text-align: center;
+            padding-bottom: 30px;
 
             .presentation,
             .purple {
@@ -69,7 +70,7 @@ body {
 
             .city {
                 width: 100%;
-                background-color: config.$secondary-background-color;
+                background-color: config.$tertiary-background-color;
                 color: rgba(#000000, .7);
                 font-size: 18px;
                 font-weight: bold;
@@ -91,15 +92,13 @@ body {
 
         #steps,
         #restaurants {
-            padding-top: 60px;
-            padding-bottom: 60px;
+            padding: 50px 10px;
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
         }
 
         #steps {
-            /* padding: 0 20px; */
             display: flex;
             flex-direction: column;
 
@@ -113,6 +112,7 @@ body {
                 padding: 20px;
                 align-items: center;
                 margin-left: 20px;
+                background-color: config.$secondary-background-color;
 
                 i {
                     padding: 0 25px;
