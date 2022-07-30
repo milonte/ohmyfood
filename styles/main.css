@@ -1,9 +1,157 @@
 /* ----- GLOBAL CONFIGURATION ----- */
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-h1 {
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: white;
+}
+body p {
+  font-weight: lighter;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.6);
+}
+body header {
+  margin: 0;
+}
+body header .logo {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  width: 100%;
+  box-shadow: 5px 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+body header .logo img {
+  height: 35px;
+}
+body header h1 {
+  font-weight: bolder;
+  font-size: 35px;
+  font-weight: 400;
+}
+body main .title {
+  flex: 100%;
+  margin: 25px;
+}
+body main .purple {
+  background: linear-gradient(0deg, #9356DC, #FF79DA);
+  box-shadow: 0px 2px 2px 3px rgba(0, 0, 0, 0.08);
+  border-radius: 30px;
+  text-decoration: none;
+  color: white;
+  margin-bottom: 50px;
+  padding: 15px 25px;
+}
+body main .purple:hover {
+  background: linear-gradient(0deg, #9b63df, #ff88de);
+  box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.15);
+}
+body main .like {
+  font-size: 35px;
+  text-align: center;
+  color: transparent;
+  padding-right: 10px;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: rgba(0, 0, 0, 0.6);
+  background-size: 35px 35px;
+  background-position: 0 35px;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(0deg, #9356DC, #FF79DA);
+  transition: background-position 0.5s ease-in-out;
+  -webkit-transition: background-position 0.3s ease-in-out;
+}
+body main .like:hover {
+  transition: background-position 0.3s ease-in;
+  -webkit-transition: background-position 0.3s ease-in;
+  -webkit-text-stroke-color: #9356DC;
+  background-position: 0 0;
+  -webkit-text-stroke-color: #9356DC;
+  animation: pulse 0.3s ease-in-out;
+  animation-delay: 0.3s;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  95% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+body main .card {
+  background-color: #f3f3f3;
+  box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  margin: 15px;
+  min-width: 300px;
+  background-color: white;
+  transition: box-shadow 0.1s ease-out 0.05s, transform 0.1s ease-out 0.05s;
+}
+body main .card:hover {
+  box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.2);
+  transform: scale(1.005);
+}
+body main .card a {
+  text-decoration: none;
+}
+body main .card h3,
+body main .card p {
+  text-decoration: none;
+}
+body main footer {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 30px;
+  padding-bottom: 35px;
+  color: white;
+}
+body main footer .logo {
+  font-size: 25px;
   font-family: "Shrikhand", sans-serif;
-  font-weight: bold;
+  padding-bottom: 13px;
+}
+body main footer a {
+  color: white;
+  margin-top: 13px;
+  text-decoration: none;
+  font-size: 20px;
+}
+body main footer a i {
+  width: 20px;
+  margin-right: 10px;
+  font-size: 17px;
+}
+body footer {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 30px;
+  padding-bottom: 35px;
+  color: white;
+}
+body footer .logo {
+  font-size: 25px;
+  font-family: "Shrikhand", sans-serif;
+  padding-bottom: 13px;
+}
+body footer a {
+  color: white;
+  margin-top: 13px;
+  text-decoration: none;
+  font-size: 20px;
+}
+body footer a i {
+  width: 20px;
+  margin-right: 10px;
+  font-size: 17px;
 }
 
 /*# sourceMappingURL=main.css.map */

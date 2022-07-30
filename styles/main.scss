@@ -1,16 +1,198 @@
-/* ----- GLOBAL CONFIGURATION ----- */
-@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@use 'config';
 
-$primary-color: #9356DC;
-$secondaty-color: #FF79DA;
-$tertiary-color: #99E2D0;
-$background-color: white;
+body {
 
-$title-font: 'Shrikhand', sans-serif;
-$text-font: 'Roboto', sans-serif;
+    margin: 0;
+    font-family: config.$text-font;
+    background-color: config.$background-color;
 
-h1 {
-    font-family: $title-font;
-    font-weight: bold;
+    p {
+        font-weight: lighter;
+        font-size: 20px;
+        color: rgba(#000000, .6);
+    }
+
+    header {
+        margin: 0;
+
+        .logo {
+            text-align: center;
+            padding-top: 20px;
+            padding-bottom: 10px;
+            width: 100%;
+            box-shadow: 5px 0 5px 5px rgba(#000000, .1);
+
+            img {
+                height: 35px;
+            }
+        }
+
+        h1 {
+            font-weight: bolder;
+            font-size: 35px;
+            font-weight: 400;
+        }
+
+    }
+
+    main {
+
+        .title {
+            flex: 100%;
+            margin: 25px;
+        }
+
+        .purple {
+            background: linear-gradient(0deg, config.$primary-color , config.$secondary-color);
+            box-shadow: 0px 2px 2px 3px rgba(#000000, .08);
+            border-radius: 30px;
+            text-decoration: none;
+            color: white;
+            margin-bottom: 50px;
+            padding: 15px 25px;
+
+            &:hover {
+                background: linear-gradient(0deg, lighten(config.$primary-color, 3%), lighten(config.$secondary-color, 3%));
+                box-shadow: 0px 0px 3px 3px rgba(#000000, .15);
+
+            }
+
+        }
+
+        .like {
+            font-size: 35px;
+            text-align: center;
+            color: transparent;
+            padding-right: 10px;
+
+            -webkit-text-stroke-width: 2px;
+            -webkit-text-stroke-color: rgba(#000000, .6);
+
+            background-size: 35px 35px;
+            background-position: 0 35px;
+            background-clip: text;
+            -webkit-background-clip: text;
+            background-repeat: no-repeat;
+            background-image: linear-gradient(0deg, config.$primary-color, config.$secondary-color);
+
+            transition: background-position .5s ease-in-out;
+            -webkit-transition: background-position .3s ease-in-out;
+
+            &:hover {
+                transition: background-position .3s ease-in;
+                -webkit-transition: background-position .3s ease-in;
+                -webkit-text-stroke-color: config.$primary-color;
+                background-position: 0 0;
+
+                -webkit-text-stroke-color: config.$primary-color;
+
+                animation: pulse .3s ease-in-out;
+                animation-delay: .3s;
+            }
+
+            @keyframes pulse {
+                0% {
+                    transform: scale(1);
+                }
+
+                50% {
+                    transform: scale(1.1);
+                }
+
+                95% {
+                    transform: scale(.8);
+                }
+
+                100% {
+                    transform: scale(1);
+                }
+            }
+
+        }
+
+        .card {
+            background-color: config.$secondary-background-color;
+            box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, .1);
+            border-radius: 20px;
+            margin: 15px;
+            min-width: 300px;
+            background-color: config.$background-color;
+            transition: box-shadow .1s ease-out .05s,
+                transform .1s ease-out .05s;
+
+            &:hover {
+                box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, .2);
+                transform: scale(1.005);
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+
+            h3,
+            p {
+                text-decoration: none;
+            }
+        }
+
+        footer {
+            display: flex;
+            flex-direction: column;
+            background-color: rgba(#000000, .85);
+            padding: 30px;
+            padding-bottom: 35px;
+            color: white;
+
+            .logo {
+                font-size: 25px;
+                font-family: config.$title-font;
+                padding-bottom: 13px;
+            }
+
+            a {
+                color: white;
+                margin-top: 13px;
+                text-decoration: none;
+                font-size: 20px;
+
+                i {
+                    width: 20px;
+                    margin-right: 10px;
+                    font-size: 17px;
+                }
+            }
+
+        }
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(#000000, .85);
+        padding: 30px;
+        padding-bottom: 35px;
+        color: white;
+
+        .logo {
+            font-size: 25px;
+            font-family: config.$title-font;
+            padding-bottom: 13px;
+        }
+
+        a {
+            color: white;
+            margin-top: 13px;
+            text-decoration: none;
+            font-size: 20px;
+
+            i {
+                width: 20px;
+                margin-right: 10px;
+                font-size: 17px;
+            }
+        }
+
+    }
+
 }
