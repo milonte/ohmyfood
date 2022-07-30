@@ -1,83 +1,10 @@
-/* ----- GLOBAL CONFIGURATION ----- */
-@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
-
-@mixin screen-min($min) {
-    @media screen and (min-width: $min) {
-        @content
-    }
-}
-
-$primary-color: #9356DC;
-$secondary-color: #FF79DA;
-$tertiary-color: #99E2D0;
-$background-color: white;
-$secondary-background-color: rgba(#000000, .03);
-
-$title-font: 'Shrikhand', sans-serif;
-$text-font: 'Roboto', sans-serif;
-
-$tablet-min-width: 768px;
-$desktop-min-width: 1024px;
-
+@use 'config';
 
 body {
 
-    /* spinner loading*/
-    &::after {
-        content: "";
-        background-color: white;
-        background-image: url("../images/ohmyfood@2x.svg");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 0;
-        position: absolute;
-        display: flex;
-        justify-items: center;
-        margin: auto;
-        justify-content: center;
-        width: 100%;
-        height: 100%;
-        animation: loader 2.5s forwards;
-        animation-delay: .5s;
-
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-
-    @keyframes loader {
-        0% {
-            background-size: 0%;
-        }
-
-        30% {
-            background-size: 65%;
-        }
-
-        35% {
-            background-size: 65%;
-        }
-
-        50% {
-            background-size: 55%;
-        }
-
-        75% {
-            top: 0;
-            background-size: 55%;
-        }
-
-        100% {
-            background-size: 55%;
-            top: -100vh;
-        }
-
-    }
-
     margin: 0;
-    font-family: $text-font;
-    background-color: $background-color;
+    font-family: config.$text-font;
+    background-color: config.$background-color;
 
     p {
         font-weight: lighter;
@@ -115,314 +42,126 @@ body {
             margin: 25px;
         }
 
+        .purple {
+            background: linear-gradient(0deg, config.$primary-color , config.$secondary-color);
+            box-shadow: 0px 2px 2px 3px rgba(#000000, .08);
+            border-radius: 30px;
+            text-decoration: none;
+            color: white;
+            margin-bottom: 50px;
+            padding: 15px 25px;
+
+            &:hover {
+                background: linear-gradient(0deg, lighten(config.$primary-color, 3%), lighten(config.$secondary-color, 3%));
+                box-shadow: 0px 0px 3px 3px rgba(#000000, .15);
+
+            }
+
+        }
+
+        .like {
+            font-size: 35px;
+            text-align: center;
+            color: transparent;
+            padding-right: 10px;
+
+            -webkit-text-stroke-width: 2px;
+            -webkit-text-stroke-color: rgba(#000000, .6);
+
+            background-size: 35px 35px;
+            background-position: 0 35px;
+            background-clip: text;
+            -webkit-background-clip: text;
+            background-repeat: no-repeat;
+            background-image: linear-gradient(0deg, config.$primary-color, config.$secondary-color);
+
+            transition: background-position .5s ease-in-out;
+            -webkit-transition: background-position .3s ease-in-out;
+
+            &:hover {
+                transition: background-position .3s ease-in;
+                -webkit-transition: background-position .3s ease-in;
+                -webkit-text-stroke-color: config.$primary-color;
+                background-position: 0 0;
+
+                -webkit-text-stroke-color: config.$primary-color;
+
+                animation: pulse .3s ease-in-out;
+                animation-delay: .3s;
+            }
+
+            @keyframes pulse {
+                0% {
+                    transform: scale(1);
+                }
+
+                50% {
+                    transform: scale(1.1);
+                }
+
+                95% {
+                    transform: scale(.8);
+                }
+
+                100% {
+                    transform: scale(1);
+                }
+            }
+
+        }
+
         .card {
-            background-color: $secondary-background-color;
+            background-color: config.$secondary-background-color;
             box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, .1);
             border-radius: 20px;
             margin: 15px;
-        }
+            min-width: 300px;
+            background-color: config.$background-color;
+            transition: box-shadow .1s ease-out .05s,
+                transform .1s ease-out .05s;
 
-        #home {
-            display: flex;
-            align-items: center;
-            background-color: $secondary-background-color;
-            flex-direction: column;
-            text-align: center;
-
-            .presentation,
-            .explore {
-                margin: 15px;
+            &:hover {
+                box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, .2);
+                transform: scale(1.005);
             }
 
-            .city {
-                width: 100%;
-                background-color: $secondary-background-color;
-                color: rgba(#000000, .7);
-                font-size: 18px;
-                font-weight: bold;
-                vertical-align: middle;
-                padding: 15px 0;
-
-                i {
-                    padding: 0 10px;
-                }
-            }
-
-            .presentation {
-                p {
-                    margin: 0;
-                }
-            }
-
-            .explore {
-                background: linear-gradient(0deg, $primary-color , $secondary-color);
-                box-shadow: 0px 2px 2px 3px rgba(#000000, .08);
-                border-radius: 30px;
+            a {
                 text-decoration: none;
+            }
+
+
+            h3,
+            p {
+                text-decoration: none;
+            }
+        }
+
+        footer {
+            display: flex;
+            flex-direction: column;
+            background-color: rgba(#000000, .85);
+            padding: 30px;
+            padding-bottom: 35px;
+            color: white;
+
+            .logo {
+                font-size: 25px;
+                font-family: config.$title-font;
+                padding-bottom: 13px;
+            }
+
+            a {
                 color: white;
-                margin-bottom: 50px;
-                padding: 15px 25px;
-
-                &:hover {
-                    background: linear-gradient(0deg, lighten($primary-color, 3%), lighten($secondary-color, 3%));
-                    box-shadow: 0px 0px 3px 3px rgba(#000000, .15);
-
-                }
-
-            }
-        }
-
-        #steps,
-        #restaurants {
-            padding-top: 60px;
-            padding-bottom: 60px;
-            display: flex;
-            flex-direction: column;
-            flex-wrap: wrap;
-        }
-
-        #steps {
-            /* padding: 0 20px; */
-            display: flex;
-            flex-direction: column;
-
-            @include screen-min($tablet-min-width) {
-                flex-direction: row;
-                justify-content: center;
-            }
-
-            .card {
-                font-weight: bolder;
-                padding: 20px;
-                display: flex;
-                align-items: center;
-                margin-left: 20px;
+                margin-top: 13px;
+                text-decoration: none;
+                font-size: 20px;
 
                 i {
-                    padding: 0 25px;
-                    font-size: 23px;
+                    width: 20px;
+                    margin-right: 10px;
+                    font-size: 17px;
                 }
-
-                span {
-                    padding-right: 15px;
-                }
-
-                /*
-                    the 3rd .card 
-                */
-                &:nth-of-type(3) {
-                    background-color: #f7e9ff;
-
-                    i {
-                        color: $primary-color;
-                    }
-                }
-
-                /*
-                    each card -> set content equals to the counter $i
-                    and increment the counter $i
-                    (just a "for" loop...) 
-                */
-                @for $i from 1 through 3 {
-
-                    /* #{dollar variable} is interpolation (needed for func) */
-                    &:nth-of-type(#{$i})::before {
-                        /* quote(1) ->"1" */
-                        content: quote(#{$i});
-                    }
-                }
-
-                &::before {
-                    font-weight: lighter;
-                    color: white;
-                    background-color: $primary-color;
-                    padding: 4px 8px;
-                    border-radius: 15px;
-                    margin-left: -30px;
-                    font-size: 13px;
-                }
-
             }
-        }
-
-        #restaurants {
-            background-color: $secondary-background-color;
-
-            @include screen-min($tablet-min-width) {
-                padding-left: 20px;
-                padding-right: 20px;
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .card-container {
-                display: flex;
-                flex-direction: column;
-
-                @include screen-min($tablet-min-width) {
-                    flex-direction: row;
-                    flex: 50%;
-                }
-
-
-                .card {
-                    min-width: 300px;
-                    background-color: $background-color;
-                    overflow: hidden;
-                    transition: box-shadow .1s ease-out .05s,
-                        transform .1s ease-out .05s;
-                    /* needed for position absolute of "new" pill */
-                    position: relative;
-
-                    .new::after {
-                        /* position absolute works because 
-                        parent is in position relative */
-                        position: absolute;
-                        content: "Nouveau";
-                        padding: 8px 25px;
-                        background-color: $tertiary-color;
-                        color: green;
-                        font-size: 18px;
-                        top: 20px;
-                        right: 20px;
-                        overflow: hidden;
-                        width: 70px;
-                        text-align: center;
-                    }
-
-                    &:hover {
-                        box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, .2);
-                        transform: scale(1.005);
-                    }
-
-                    @include screen-min($tablet-min-width) {
-                        width: 100%;
-                    }
-
-                    a {
-                        display: flex;
-                        flex-direction: column;
-                        text-decoration: none;
-
-                        .picture {
-                            display: flex;
-                            align-items: center;
-
-                            img {
-                                width: 100%;
-                            }
-                        }
-
-                        .picture,
-                        .picture img {
-                            width: 100%;
-                            height: 200px;
-                            object-fit: cover;
-                            overflow: hidden;
-
-                            @include screen-min($tablet-min-width) {
-                                height: 220px;
-                            }
-
-                            @include screen-min($desktop-min-width) {
-                                height: 250px;
-                            }
-                        }
-
-                        .infos {
-                            display: flex;
-                            flex-direction: row;
-                            align-items: center;
-                            color: black;
-                            background-color: $background-color;
-                            padding: 20px;
-                            justify-content: space-between;
-
-                            h3,
-                            p {
-                                margin: 5px;
-                            }
-
-                            h3 {
-                                font-weight: bolder;
-                                font-size: 23px;
-                            }
-
-                            p {
-                                font-weight: normal;
-                                font-size: 17px;
-                            }
-
-                            .place {
-                                display: flex;
-                                flex-direction: column;
-                            }
-
-                            .like {
-                                font-size: 35px;
-                                text-align: center;
-                                color: transparent;
-                                padding-right: 10px;
-
-                                -webkit-text-stroke-width: 2px;
-                                -webkit-text-stroke-color: rgba(#000000, .6);
-
-                                background-size: 35px 35px;
-                                background-position: 0 35px;
-                                background-clip: text;
-                                -webkit-background-clip: text;
-                                background-repeat: no-repeat;
-                                background-image: linear-gradient(0deg, $primary-color, $secondary-color);
-
-                                transition: background-position .5s ease-in-out;
-                                -webkit-transition: background-position .3s ease-in-out;
-
-                                &:hover {
-                                    transition: background-position .3s ease-in;
-                                    -webkit-transition: background-position .3s ease-in;
-                                    -webkit-text-stroke-color: $primary-color;
-                                    background-position: 0 0;
-
-                                    -webkit-text-stroke-color: $primary-color;
-
-                                    animation: pulse .3s ease-in-out;
-                                    animation-delay: .3s;
-                                }
-
-                                @keyframes pulse {
-                                    0% {
-                                        transform: scale(1);
-                                    }
-
-                                    50% {
-                                        transform: scale(1.1);
-                                    }
-
-                                    95% {
-                                        transform: scale(.8);
-                                    }
-
-                                    100% {
-                                        transform: scale(1);
-                                    }
-                                }
-
-
-
-
-
-                            }
-
-                        }
-                    }
-                }
-
-
-
-            }
-
-
 
         }
     }
@@ -437,7 +176,7 @@ body {
 
         .logo {
             font-size: 25px;
-            font-family: $title-font;
+            font-family: config.$title-font;
             padding-bottom: 13px;
         }
 
@@ -455,4 +194,5 @@ body {
         }
 
     }
+
 }

@@ -1,0 +1,282 @@
+@use 'config';
+
+body {
+
+    /* spinner loading*/
+    &::before {
+        content: "";
+        background-color: white;
+        background-image: url("../images/ohmyfood@2x.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 0;
+        display: flex;
+        justify-items: center;
+        margin: auto;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        animation: loader 2.5s forwards;
+        animation-delay: .5s;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 99;
+    }
+
+    @keyframes loader {
+        0% {
+            background-size: 0%;
+        }
+
+        30% {
+            background-size: 65%;
+        }
+
+        35% {
+            background-size: 65%;
+        }
+
+        50% {
+            background-size: 55%;
+        }
+
+        75% {
+            top: 0;
+            background-size: 55%;
+        }
+
+        100% {
+            background-size: 55%;
+            top: -100vh;
+        }
+
+    }
+
+    main {
+        #home {
+            display: flex;
+            align-items: center;
+            background-color: config.$secondary-background-color;
+            flex-direction: column;
+            text-align: center;
+            padding-bottom: 30px;
+
+            .presentation,
+            .purple {
+                margin: 15px;
+            }
+
+            .city {
+                width: 100%;
+                background-color: config.$tertiary-background-color;
+                color: rgba(#000000, .7);
+                font-size: 18px;
+                font-weight: bold;
+                vertical-align: middle;
+                padding: 15px 0;
+
+                i {
+                    padding: 0 10px;
+                }
+            }
+
+            .presentation {
+                p {
+                    margin: 0;
+                }
+            }
+
+        }
+
+        #steps,
+        #restaurants {
+            padding: 50px 10px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+
+        #steps {
+            display: flex;
+            flex-direction: column;
+
+            @include config.screen-min(config.$tablet-min-width) {
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .card {
+                font-weight: bolder;
+                padding: 20px;
+                align-items: center;
+                margin-left: 20px;
+                background-color: config.$secondary-background-color;
+
+                i {
+                    padding: 0 25px;
+                    font-size: 23px;
+                }
+
+                span {
+                    padding-right: 15px;
+                }
+
+                /*
+                    the 3rd .card 
+                */
+                &:nth-of-type(3) {
+                    background-color: #f7e9ff;
+
+                    i {
+                        color: config.$primary-color;
+                    }
+                }
+
+                /*
+                    each card -> set content equals to the counter $i
+                    and increment the counter $i
+                    (just a "for" loop...) 
+                */
+                @for $i from 1 through 3 {
+
+                    /* #{dollar variable} is interpolation (needed for func) */
+                    &:nth-of-type(#{$i})::before {
+                        /* quote(1) ->"1" */
+                        content: quote(#{$i});
+                    }
+                }
+
+                &::before {
+                    font-weight: lighter;
+                    color: white;
+                    background-color: config.$primary-color;
+                    padding: 4px 8px;
+                    border-radius: 15px;
+                    margin-left: -30px;
+                    font-size: 13px;
+                }
+
+            }
+        }
+
+        #restaurants {
+            background-color: config.$secondary-background-color;
+
+            @include config.screen-min(config.$tablet-min-width) {
+                padding-left: 20px;
+                padding-right: 20px;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .card-container {
+                display: flex;
+                flex-direction: column;
+
+                @include config.screen-min(config.$tablet-min-width) {
+                    flex-direction: row;
+                    flex: 50%;
+                }
+
+
+                .card {
+                    overflow: hidden;
+                    /* needed for position absolute of "new" pill */
+                    position: relative;
+
+                    .new::after {
+                        /* position absolute works because 
+                            parent is in position relative */
+                        position: absolute;
+                        content: "Nouveau";
+                        padding: 8px 25px;
+                        background-color: config.$tertiary-color;
+                        color: green;
+                        font-size: 18px;
+                        top: 20px;
+                        right: 20px;
+                        overflow: hidden;
+                        width: 70px;
+                        text-align: center;
+                    }
+
+
+                    @include config.screen-min(config.$tablet-min-width) {
+                        width: 100%;
+                    }
+
+                    a {
+                        display: flex;
+                        flex-direction: column;
+                        text-decoration: none;
+
+                        .picture {
+                            display: flex;
+                            align-items: center;
+
+                            img {
+                                width: 100%;
+                            }
+                        }
+
+                        .picture,
+                        .picture img {
+                            width: 100%;
+                            height: 200px;
+                            object-fit: cover;
+                            overflow: hidden;
+
+                            @include config.screen-min(config.$tablet-min-width) {
+                                height: 220px;
+                            }
+
+                            @include config.screen-min(config.$desktop-min-width) {
+                                height: 250px;
+                            }
+                        }
+
+                        .infos {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            color: black;
+                            background-color: config.$background-color;
+                            padding: 20px;
+                            justify-content: space-between;
+
+                            h3,
+                            p {
+                                margin: 5px;
+                            }
+
+                            h3 {
+                                font-weight: bolder;
+                                font-size: 23px;
+                            }
+
+                            p {
+                                font-weight: normal;
+                                font-size: 17px;
+                            }
+
+                            .place {
+                                display: flex;
+                                flex-direction: column;
+                            }
+
+                        }
+                    }
+                }
+
+
+
+            }
+
+
+
+        }
+    }
+}

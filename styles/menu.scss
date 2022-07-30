@@ -1,0 +1,257 @@
+@use 'config';
+
+body {
+
+    header {
+        nav {
+            position: relative;
+
+            .back {
+                position: absolute;
+                top: 20px;
+                left: 30px;
+                font-size: 30px;
+                color: black;
+            }
+        }
+    }
+
+    main {
+
+        #cover {
+            object-fit: cover;
+            position: relative;
+            z-index: 1;
+
+            img {
+                height: 300px;
+                width: 100%;
+                object-fit: cover;
+
+            }
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: center;
+            padding-right: 20px;
+
+            h1 {
+                font-family: config.$title-font;
+                font-size: 35px;
+            }
+
+        }
+
+        #menu {
+            position: relative;
+            z-index: 8;
+            background-color: config.$secondary-background-color;
+            padding-top: 15px;
+            padding-bottom: 50px;
+            margin-top: -30px;
+            border-radius: 30px 30px 0 0;
+
+            @include config.screen-min(config.$tablet-min-width) {
+                padding-left: 2%;
+                padding-right: 2%;
+            }
+
+            .main-container {
+                display: flex;
+                flex-direction: column;
+
+                @include config.screen-min(config.$tablet-min-width) {
+                    flex-direction: row;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                }
+
+                .card-container {
+                    flex-direction: column;
+                    flex-wrap: nowrap;
+                    margin-bottom: 50px;
+                    flex: 100%;
+                    opacity: 0;
+                    animation: loader .3s forwards ease-in-out;
+
+                    @for $i from 1 through 3 {
+                        &:nth-of-type(#{$i}) {
+                            $delay: calc(.25 * $i);
+                            animation-delay: #{$delay}s;
+                        }
+                    }
+
+                    @keyframes loader {
+                        0% {
+                            margin-top: 10px;
+                            opacity: 0;
+                        }
+
+                        100% {
+                            margin-top: 0;
+                            opacity: 1;
+                        }
+                    }
+
+                    @include config.screen-min(config.$tablet-min-width) {
+                        flex: 40%;
+                        width: 40%;
+                        flex-wrap: wrap;
+                    }
+
+                    @include config.screen-min(config.$desktop-min-width) {
+                        flex: 30%;
+                        width: 30%;
+                        flex-wrap: wrap;
+                    }
+
+                    h2 {
+                        font-weight: lighter;
+                        text-transform: uppercase;
+                        position: relative;
+                        color: rgba(0, 0, 0, .7);
+
+                        &::after {
+                            position: absolute;
+                            content: " ";
+                            width: 60px;
+                            height: 4px;
+                            background-color: config.$tertiary-color;
+                            bottom: -7px;
+                            left: 0;
+                        }
+                    }
+
+                    .card {
+                        flex: 100%;
+                        min-width: 0;
+                        overflow: hidden;
+                        height: 100px;
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: nowrap;
+                        align-items: center;
+
+                        @include config.screen-min(config.$tablet-min-width) {
+                            min-width: 300px;
+                        }
+
+                        &:hover {
+                            .infos {
+                                /*
+                                100% : base card width
+                                10% : hack to prevent overflow
+                                100px : base hover command button width
+                                */
+                                width: calc(100% - 10% - 100px);
+                            }
+
+                            .command {
+                                margin-right: 0;
+
+                                a {
+                                    transform: rotate(360deg);
+                                }
+                            }
+                        }
+
+                        .infos {
+                            display: flex;
+                            flex-direction: column;
+                            flex-wrap: nowrap;
+                            //  90% : prevent overflow
+                            width: 90%;
+                            max-width: 90%;
+                            margin: auto;
+                            padding: 10px 25px;
+                            // content width adjust when hover
+                            transition: width .3s ease-in-out;
+
+                            h3,
+                            .details .ingredients {
+                                margin: 5px 0;
+                                word-wrap: break-word;
+                                overflow: hidden;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+                                max-width: 80%;
+                            }
+
+                            h3 {
+                                color: black;
+                                font-size: 22px;
+                                font-weight: bold;
+                            }
+
+                            .details {
+                                display: flex;
+                                flex-direction: row;
+                                flex-wrap: nowrap;
+                                align-items: center;
+                                justify-content: space-between;
+
+                                .ingredients,
+                                .price {
+                                    font-size: 20px;
+                                    color: black;
+                                }
+
+                                .price {
+                                    font-weight: bold;
+                                }
+                            }
+
+                        }
+
+                        .command {
+                            height: 100%;
+                            width: 100px;
+                            min-width: 100px;
+                            background-color: config.$tertiary-color;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font-size: 35px;
+                            margin-right: -100px;
+                            transition: margin-right .3s ease-in-out, font-size .2s ease-in-out;
+
+                            &:hover {
+                                font-size: 40px;
+                            }
+
+                            a {
+                                color: white;
+                                transition: transform .3s ease-in-out;
+                            }
+                        }
+                    }
+                }
+
+                .purple-container {
+                    margin-bottom: 50px;
+                    flex: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 25px;
+
+                    @include config.screen-min(config.$tablet-min-width) {
+                        flex: 40%;
+                        width: 40%;
+                    }
+
+                    @include config.screen-min(config.$desktop-min-width) {
+                        flex: 100%;
+                        width: 100%;
+                    }
+                }
+            }
+
+        }
+
+    }
+}
