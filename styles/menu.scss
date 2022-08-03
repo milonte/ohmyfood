@@ -1,17 +1,19 @@
 @use 'config';
 
 body {
+    .responsive-hide {
+        display: none;
+
+        @include config.screen-min(config.$tablet-min-width) {
+            display: flex;
+        }
+    }
 
     header {
         a {
             .responsive-hide {
                 font-size: 20px;
                 margin-left: 10px;
-                display: none;
-
-                @include config.screen-min(config.$tablet-min-width) {
-                    display: inline;
-                }
             }
         }
     }
@@ -71,14 +73,80 @@ body {
                 }
 
                 .card-container {
-                    flex-direction: column;
-                    flex-wrap: nowrap;
                     margin-bottom: 50px;
                     flex: 100%;
                     opacity: 0;
                     animation: loader .3s forwards ease-in-out;
 
-                    @for $i from 1 through 3 {
+                    /* Command div */
+                    &:nth-of-type(4) {
+                        display: flex;
+                        flex-direction: column;
+                        align-content: center;
+
+                        .infos {
+                            margin: auto;
+                            justify-content: center;
+                            text-align: center;
+                            padding: 0 20px;
+                            padding-top: 40px;
+                            flex-direction: column;
+
+                            @include config.screen-min(config.$desktop-min-width) {
+                                padding: 0;
+                            }
+
+                            .citation {
+                                font-size: 25px;
+                                font-style: italic;
+
+                                @include config.screen-min(config.$desktop-min-width) {
+                                    margin: 0;
+                                }
+
+                                &::before,
+                                &::after {
+                                    font-size: 35px;
+                                    padding: 5px;
+                                }
+
+                                &::before {
+                                    content: '\201C';
+                                }
+
+                                &::after {
+                                    content: '\201D';
+                                }
+                            }
+
+                            .price {
+                                padding-left: 15px;
+                                font-size: 30px;
+                            }
+                        }
+
+                        .purple {
+                            justify-content: center;
+                            display: flex;
+                            width: 250px;
+                            margin: auto;
+                            font-size: 25px;
+                        }
+
+
+
+                        @include config.screen-min(config.$tablet-min-width) {
+                            flex: 40%;
+                            width: 40%;
+                        }
+
+                        @include config.screen-min(config.$desktop-min-width) {
+                            flex: 100%;
+                            width: 100%;
+                        }
+                    }
+
+                    @for $i from 1 through 4 {
                         &:nth-of-type(#{$i}) {
                             $delay: calc(.25 * $i);
                             animation-delay: #{$delay}s;
@@ -124,6 +192,11 @@ body {
                             bottom: -7px;
                             left: 0;
                         }
+                    }
+
+                    .price {
+                        font-weight: bold;
+                        color: black;
                     }
 
                     .card {
@@ -197,12 +270,8 @@ body {
                                 .ingredients,
                                 .price {
                                     font-size: 20px;
-                                    color: black;
                                 }
 
-                                .price {
-                                    font-weight: bold;
-                                }
                             }
 
                         }
@@ -231,24 +300,6 @@ body {
                     }
                 }
 
-                .purple-container {
-                    margin-bottom: 50px;
-                    flex: 100%;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    font-size: 25px;
-
-                    @include config.screen-min(config.$tablet-min-width) {
-                        flex: 40%;
-                        width: 40%;
-                    }
-
-                    @include config.screen-min(config.$desktop-min-width) {
-                        flex: 100%;
-                        width: 100%;
-                    }
-                }
             }
 
         }
