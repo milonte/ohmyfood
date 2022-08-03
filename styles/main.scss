@@ -1,7 +1,11 @@
 @use 'config';
 
-body {
+html {
+    scroll-padding-top: 70px;
+    scroll-behavior: smooth;
+}
 
+body {
     margin: 0;
     font-family: config.$text-font;
     background-color: config.$background-color;
@@ -12,8 +16,36 @@ body {
         color: rgba(#000000, .6);
     }
 
+
     header {
         margin: 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-color: config.$background-color;
+        z-index: 9;
+        height: 70px;
+
+        a {
+            text-decoration: none;
+            font-family: config.$text-font;
+            display: flex;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 30px;
+            z-index: 10;
+            height: 70px;
+            font-size: 28px;
+            font-weight: bolder;
+            color: black;
+
+            &:hover {
+                color: config.$tertiary-color;
+            }
+
+        }
 
         .logo {
             text-align: center;
@@ -36,9 +68,9 @@ body {
     }
 
     main {
+        margin-top: 70px;
 
         .title {
-            flex: 100%;
             margin: 25px;
         }
 
@@ -136,40 +168,6 @@ body {
             }
         }
 
-        footer {
-            background-color:
-                /* rgba(#000000, .85) */
-                red;
-            padding: 30px;
-            padding-bottom: 35px;
-            color: white;
-
-            .logo {
-                font-size: 25px;
-                font-family: config.$title-font;
-                padding-bottom: 13px;
-            }
-
-            .col {
-                display: flex;
-                flex-direction: column;
-
-                a {
-                    color: white;
-                    margin-top: 13px;
-                    text-decoration: none;
-                    font-size: 20px;
-
-                    i {
-                        width: 20px;
-                        margin-right: 10px;
-                        font-size: 17px;
-                    }
-                }
-            }
-
-
-        }
     }
 
     footer {
