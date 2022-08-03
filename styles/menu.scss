@@ -3,15 +3,15 @@
 body {
 
     header {
-        nav {
-            position: relative;
+        a {
+            .responsive-hide {
+                font-size: 20px;
+                margin-left: 10px;
+                display: none;
 
-            .back {
-                position: absolute;
-                top: 20px;
-                left: 30px;
-                font-size: 30px;
-                color: black;
+                @include config.screen-min(config.$tablet-min-width) {
+                    display: inline;
+                }
             }
         }
     }
