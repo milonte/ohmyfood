@@ -214,6 +214,8 @@ body {
                         }
 
                         &:hover {
+                            cursor: pointer;
+
                             .infos {
                                 /*
                                 100% : base card width
